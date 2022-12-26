@@ -1,5 +1,8 @@
-import '../styles/globals.css'
+import NavbarP from '../components/NavbarP'
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <>
+            <NavbarP />
+            <Component {...pageProps} />
+          </>
 }
