@@ -18,16 +18,17 @@ export default function Home() {
   const inputRef = React.useRef(null);
   var sha256 = require('js-sha256');
 
+  inputRef.current.value = sha256(textareaRef.current.value);
 
   const onChange = () => {
     if (textareaRef.current) {
-      inputRef.current.value = sha256(textareaRef.current.value);;
+      inputRef.current.value = sha256(textareaRef.current.value);
     }
   };
 
   return (
     <>
-     
+     <Spacer y={1} />
       <Card>
         <Card.Body>
         <Row justify="center" align="center">
