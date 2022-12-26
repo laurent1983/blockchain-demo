@@ -18,7 +18,7 @@ export default function Home() {
   const inputRef = React.useRef(null);
   var sha256 = require('js-sha256');
 
-  inputRef.current.value = sha256(textareaRef.current.value);
+  
 
   const onChange = () => {
     if (textareaRef.current) {
@@ -32,23 +32,17 @@ export default function Home() {
       <Card>
         <Card.Body>
         <Row justify="center" align="center">
-          <Text  h1> HASH SHA256</Text>
+          <Text h1> HASH SHA256</Text>
           </Row>
           <Row justify="center" align="center">
           <Textarea width='520px'  rows='12'  bordered ref={textareaRef}  onChange={onChange} />
           </Row>
           <Spacer y={1} />
           <Row justify="center" align="center">
-          <Input ref={inputRef} width="520px"  />
+          <Input ref={inputRef} width="520px" value={sha256('')} />
           </Row>
         </Card.Body>
       </Card>
-    
-        
-      
-        
-      
-      
     </>
   )
 }
