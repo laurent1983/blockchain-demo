@@ -20,6 +20,9 @@ export default function NavbarP() {
         <Navbar.Link onClick={() => router.push(`/block`)}>
           <Text h1>Block</Text>
         </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/blockchain`)}>
+          <Text h1>Blockchain</Text>
+        </Navbar.Link>
       </Navbar.Content>
     </Navbar>
   );

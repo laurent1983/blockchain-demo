@@ -10,8 +10,8 @@ export default function Block() {
   const card = React.useRef(null);
   var sha256 = require('js-sha256');
 
-  const red = '#d2475e';
-  const green = '#54a83b';
+  const red = '#ff726f ';
+  const green = '#90ee90';
 
   const onChange = () => {    
     if (textareaRef.current) {
