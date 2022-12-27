@@ -23,6 +23,15 @@ export default function NavbarP() {
         <Navbar.Link onClick={() => router.push(`/blockchain`)}>
           <Text h1>Blockchain</Text>
         </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/decentralisation`)}>
+          <Text h1>Décentralisation</Text>
+        </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/coin`)}>
+          <Text h1>Coin</Text>
+        </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/coinbase`)}>
+          <Text h1>Coinbase</Text>
+        </Navbar.Link>
       </Navbar.Content>
     </Navbar>
   );

@@ -1,4 +1,4 @@
-import { Textarea, Input, Button, Grid, Card, Text, Spacer } from "@nextui-org/react"
+import { Textarea, Input, Button, Container, Card, Text, Row, Col, Spacer } from "@nextui-org/react"
 import React from "react";
 import { useEffect, useState } from 'react';
 
@@ -58,37 +58,30 @@ export default function Block({_blocknumber, _nonce, _data, _previousHash, updat
 
   return (
     <>
-      <Card ref={card} variant="bordered" css={{ background: initColor }}
-  >
-      <Grid.Container gap={2}>
-        <Grid xs={4} justify='flex-end'><Text h3>Block Number</Text></Grid>
-        <Grid  xs={8}><Input ref={blocknumber} width="32em" initialValue={_blocknumber} onChange={onChange} /></Grid>
-      </Grid.Container>
-
-      <Grid.Container gap={2}>
-        <Grid xs={4} justify='flex-end'><Text h3>Nonce</Text></Grid>
-        <Grid  xs={8}><Input ref={nonce} width="32em" initialValue={_nonce} onChange={onChange} /></Grid>
-      </Grid.Container>
-
-      <Grid.Container gap={2}>
-        <Grid xs={4} justify='flex-end'><Text h3>DATA</Text></Grid>
-        <Grid  xs={8}><Textarea width='32em'  rows='4' initialValue={_data}  bordered ref={textareaRef}  onChange={onChange} /></Grid>
-      </Grid.Container>
-
-      <Grid.Container gap={2}>
-        <Grid xs={4} justify='flex-end'><Text h3>Prev</Text></Grid>
-        <Grid  xs={8}><Input width="32em" value={previousHash} /></Grid>
-      </Grid.Container>
-      
-      <Grid.Container gap={2}>
-        <Grid xs={4} justify='flex-end'><Text h3>Hash</Text></Grid>
-        <Grid  xs={8}><Input ref={inputRef} width="32em" initialValue={initHash} /></Grid>
-      </Grid.Container>
-
-      <Grid.Container gap={2}>
-        <Grid xs={4} justify='flex-end'></Grid>
-        <Grid  xs={8}><Button auto onPress={mine} > Miner </Button></Grid>
-      </Grid.Container>
+      <Card ref={card} variant="bordered" css={{ background: initColor, width: '900px', minWidth: '900px' }}>
+        <Spacer y={1} />
+      <Container css={{ width: '800px', minwidth: '800px' }} >
+       <Row key="1">
+        <Col><Text h3>Block Number</Text></Col><Col><Input ref={blocknumber} width="32em" initialValue={_blocknumber} onChange={onChange} /></Col>
+       </Row>
+       <Row key="2">
+        <Col><Text h3>Nonce</Text></Col><Col><Input ref={nonce} width="32em" initialValue={_nonce} onChange={onChange} /></Col>
+       </Row>
+       <Row key="3">
+        <Col><Text h3>DATA</Text></Col><Col><Textarea width='32em'  rows='4' initialValue={_data}  bordered ref={textareaRef}  onChange={onChange} /></Col>
+       </Row>
+       <Spacer y={1} />
+       <Row key="4">
+        <Col><Text h3>Prev</Text></Col><Col><Input width="32em" value={previousHash} /></Col>
+       </Row>
+       <Row key="5">
+        <Col><Text h3>Hash</Text></Col><Col><Input ref={inputRef} width="32em" initialValue={initHash} /></Col>
+       </Row>
+       <Row key="6">
+        <Col></Col><Col><Button auto onPress={mine} > Miner </Button></Col>
+       </Row>
+      </Container>
+      <Spacer y={1} />
       </Card>
     </>
   )
