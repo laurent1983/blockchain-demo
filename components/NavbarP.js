@@ -1,5 +1,5 @@
 
-import { Navbar } from "@nextui-org/react";
+import { Navbar, Avatar, Spacer, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 export default function NavbarP() {
@@ -10,12 +10,15 @@ export default function NavbarP() {
   return (
     <Navbar isBordered variant={"floating"} >
       <Navbar.Brand>
-       COIN SU
+        <Avatar src="/logo.png" size='lg'  /> <Spacer x={1} /> <Text h1> Coin SU </Text>
       </Navbar.Brand>
 
       <Navbar.Content >
         <Navbar.Link onClick={() => router.push(`/`)}>
-          HASH
+          <Text h1>Hash</Text>
+        </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/block`)}>
+          <Text h1>Block</Text>
         </Navbar.Link>
       </Navbar.Content>
     </Navbar>

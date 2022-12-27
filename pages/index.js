@@ -1,4 +1,4 @@
-import { Textarea, Input, Button } from "@nextui-org/react"
+import { Textarea, Input, Grid } from "@nextui-org/react"
 import React from "react";
 import { Container, Card, Row, Text, Spacer } from "@nextui-org/react";
 
@@ -6,19 +6,9 @@ import { Container, Card, Row, Text, Spacer } from "@nextui-org/react";
 
 export default function Home() {
 
-  
-
-  const handleMessageChange = event => {
-    // 👇️ update textarea value
-    setMessage(event.target.value);
-    console.log(event.target.value);
-  };
-
   const textareaRef = React.useRef(null);
   const inputRef = React.useRef(null);
   var sha256 = require('js-sha256');
-
-  
 
   const onChange = () => {
     if (textareaRef.current) {
@@ -28,21 +18,18 @@ export default function Home() {
 
   return (
     <>
-     <Spacer y={1} />
-      <Card>
-        <Card.Body>
-        <Row justify="center" align="center">
-          <Text h1> HASH SHA256</Text>
-          </Row>
-          <Row justify="center" align="center">
-          <Textarea width='520px'  rows='12'  bordered ref={textareaRef}  onChange={onChange} />
-          </Row>
-          <Spacer y={1} />
-          <Row justify="center" align="center">
-          <Input ref={inputRef} width="520px" value={sha256('')} />
-          </Row>
-        </Card.Body>
-      </Card>
+      <Grid.Container justify='center' >
+        <Grid justify='center' xs={12}><Text h1>HASH SHA256</Text></Grid>
+      </Grid.Container>
+
+      <Grid.Container gap={2}>
+        <Grid  xs={4}></Grid><Grid  xs={8}><Textarea width='32em'  rows='12'  bordered ref={textareaRef}  onChange={onChange} /></Grid>
+      </Grid.Container>
+
+      <Grid.Container gap={2}>
+        <Grid xs={4} justify='flex-end'><Text h3>Hash</Text></Grid>
+        <Grid  xs={8}><Input ref={inputRef} width="32em" initialValue={sha256('')} /></Grid>
+      </Grid.Container>
     </>
   )
 }
