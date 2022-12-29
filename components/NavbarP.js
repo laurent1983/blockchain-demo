@@ -32,6 +32,12 @@ export default function NavbarP() {
         <Navbar.Link onClick={() => router.push(`/coinbase`)}>
           <Text h1>Coinbase</Text>
         </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/signature`)}>
+          <Text h1>Signature</Text>
+        </Navbar.Link>
+        <Navbar.Link onClick={() => router.push(`/signatureTX`)}>
+          <Text h1>Signature TX</Text>
+        </Navbar.Link>
       </Navbar.Content>
     </Navbar>
   );
